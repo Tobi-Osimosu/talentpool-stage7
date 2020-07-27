@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/employer-dashboard.css">
+    <link rel="stylesheet" href="/stylesheets/employerAddTeam.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Boiler Plate CSS -->
+    <link rel="stylesheet" href="/stylesheets/bootstrap.min.css" />
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="/stylesheets/dashboardSidenav.css" />
+    <link rel="stylesheet" href="/stylesheets/dashboardHeader.css" />
+
+    <!-- Dashboard JS -->
+    <script src="/javascripts/dashboardSideNav.js"></script>
+    <title>Employer Dashboard</title>
+</head>
+
+<body>
+    <aside>
+        <div id="sidebar">
+
+            <img class="closeNavBtn btn" style="width: 36%; height: auto;" onclick="closeNav()"
+                src="/images/sidebar/back.png" alt="">
+
+
+            <a href="/employer/dashboard"
+                class="d-flex flex-column align-items-center justify-content-center sideNav-link">
+                <img class="spacing" src="/images/sidebar/dashboard.svg" alt="">
+                <p>Dashboard</p>
+            </a>
+
+            <a href="/employer/message"
+                class="d-flex flex-column align-items-center justify-content-center sideNav-link">
+                <img class="spacing" src="/images/sidebar/messages.svg" alt="">
+                <p>Messages</p>
+            </a>
+
+            <a href="#" class="d-flex flex-column align-items-center justify-content-center sideNav-link">
+                <img class="spacing" src="/images/sidebar/employee-employer-admin.svg" alt="">
+                <p>Employees</p>
+            </a>
+
+            <a href="/employer/team" class="d-flex flex-column align-items-center justify-content-center sideNav-link">
+                <img class="spacing" src="/images/sidebar/add-a-team.svg" alt="">
+                <p>Add a team</p>
+            </a>
+
+            <a href="#" class="d-flex flex-column align-items-center justify-content-center sideNav-link">
+                <img class="spacing" src="/images/sidebar/support-faq.svg" alt="">
+                <p>Support</p>
+            </a>
+
+            <a href="#" class="d-flex flex-column align-items-center justify-content-center sideNav-link">
+                <img class="spacing" src="/images/sidebar/settings.svg" alt="">
+                <p>Settings</p>
+            </a>
+        </div>
+    </aside>
+
+    <img class="dashHeaderDesign" src="/images/dashboard-header/dashboard-header-design-2.svg" alt="">
+    <img class="dashHeaderDesign" src="/images/dashboard-header/dashboard-header-design-1.svg" alt="">
+
+
+    <header id="header">
+        <nav id="nav" class="navbar navbar-expand-lg navbar-light bg-light nav-top">
+            <div class="d-flex align-items-center">
+                <div class="d-lg-none">
+                    <button class="btn toggle-btn mr-2" onclick="openNav()" type="button" aria-expanded="false"
+                        aria-label="Toggle sidenav">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <a class="navbar-brand" href="#">
+
+                    <span style="color: #4D49FF;">Talent</span> Haven
+
+                </a>
+            </div>
+
+            <div class="user-pane d-flex flex-wrap ml-auto" id="navbarSupportedContent">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown user-nav d-flex">
+
+                        <!-- If Employee Dashboard show this -->
+                        <a href="#" class="d-flex align-content-center pr-4">
+                            <img src="/images/dashboard-header/briefcase.svg" alt="">
+                        </a>
+
+                        <!-- If there is a notification use this -->
+                        <!-- <a href="#" class="d-flex align-content-center pr-4">
+                        <img src="/images/dashboard-header/briefcase-notification.svg" alt="">
+                    </a> -->
+                        <!-- End -->
+
+                        <!-- End -->
+
+                        <!-- If there isn't any notification use this -->
+                        <a href="#" class="d-flex align-content-center pr-2">
+                            <img src="/images/dashboard-header/bell.svg" alt="">
+                        </a>
+                        <!-- End -->
+
+                        <!-- If there is a notification use this -->
+                        <!-- <a href="#" class="d-flex align-content-center pr-2">
+                        <img src="/images/dashboard-header/bell-notification.svg" alt="">
+                    </a> -->
+                        <!-- End -->
+
+
+                        <div class="d-flex align-items-center btn dropdown-toggle dropleft" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/images/Tobi.jpg" alt="Profile Image"
+                                style="width: 50px; height: 50px; border-radius: 5px;">
+                        </div>
+
+                        <div class="dropdown-menu" style="position: absolute;" aria-labelledby="navbarDropdown">
+                            <div class="nav-card">
+                                <div class="nav-card-body">
+                                    <div class="d-flex justify-content-center mb-3">
+                                        <img src="/images/Tobi.jpg" alt="Profile Image"
+                                            style="width: 100px; height: 100px; border-radius: 50px;">
+                                    </div>
+                                    <h5 class="nav-card-title mb-1" href="#"> Jason Stratham</h5>
+                                    <h6 class="user-title mb-4"><img src="/images/dashboard-header/online.svg" alt=""
+                                            class="pr-1"> Employer</h6>
+                                    <div
+                                        class="d-flex flex-column flex-lg-row align-items-center justify-content-center">
+                                        <a href="#" class="nav-card-link text-center text-lg-left">View profile -></a>
+                                        <a href="#" class="nav-card-link text-center text-lg-left ml-0 ml-lg-3">Edit
+                                            profile
+                                            -></a>
+                                        <a href="/logout"
+                                            class="btn-small nav-card-link text-center text-lg-left ml-0 ml-lg-3">Logout
+                                            -></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </nav>
+    </header>
+
+    <!-- <img class="dashHeaderDesign2" src="/images/dashboard-header/dashboard-header-design-4.svg" alt="">
+<img class="dashHeaderDesign2" src="/images/dashboard-header/dashboard-header-design-3.svg" alt=""> -->
+
+    <main id="main">
+        <div id="addTeam" class="container">
+            <!-- Hello MUREWA, i've separated the the variations of the page buy descriptive comments -->
+            <!-- MUREWA, please uncomment the different scenerios to see the page differences. Thanks. -->
+
+            <!-- MUREWA! If the user has no team (Scenario 1) -->
+            <!-- <div class="row">
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <p class="invite-text">Create a team</p>
+                </div>
+            </div>
+
+            <form action="">
+                <div class="row">
+                    <div class="col-12 col-md-4">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Team Name">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary form-control text-white"
+                                placeholder="Search invites">Create Team</button>
+                        </div>
+                    </div>
+                </div>
+            </form> -->
+            <!-- End of Scenario 1 -->
+
+            <!-- MUREWA! if the user has a team (For scenario 2 & 3) (Scroll down to see scenario 2 & 3) -->
+            <div class="row">
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <p class="invite-text">Invite a team member</p>
+                </div>
+                <div class="col-12 col-md-4 ml-auto">
+                    <form action="">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search invites">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <form action="">
+                <div class="row">
+                    <div class="col-12 col-md-9">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Email Address">
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary form-control text-white"
+                                placeholder="Search invites">Invite member</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <!-- End of "For scenario 2 & 3" -->
+
+            <div class="row">
+                <div class="col-12">
+
+                    <!-- MUREWA! If there are no invites (Scenario 2) -->
+                    <!-- <div class="no-invites-border d-flex flex-column justify-content-center align-items-center">
+                        <img src="/images/employer-dashboard-team/no-invite.svg" alt="" class="img-fluid mb-4">
+                        <p class="no-invites-text">Uh oh! Seems like you did not invite anyone yet</p>
+                    </div> -->
+                    <!-- End of scenario 2 -->
+
+                    <!-- MUREWA! If there are invites (Scenario 3) -->
+                    <ul class="list-group list-group-flush ">
+                        <div class="list-group-item">
+                            <div class="row d-flex align-items-center">
+                                <div class="d-flex col-6">
+                                    <div class="d-flex flex-column justify-content-center mr-3">
+                                        <img src="/images/Tobi.jpg" alt="" class="d-none d-sm-flex img-fluid" style="width: 50px;
+                                            height: 50px; border-radius: 25px">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="table-user-name">Meredith Grey</span>
+                                        <span class="table-user-title">HR</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end col-6">
+                                    <a href="#"><img src="/images/employer-dashboard/delete.svg" alt=""
+                                            class="mr-3"></a>
+                                    <button class="btn list-btn btn-success btn-accepted">Accepted</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row d-flex align-items-center">
+                                <div class="d-flex col-6">
+                                    <div class="d-flex flex-column justify-content-center mr-3">
+                                        <img src="/images/Tobi.jpg" alt="" class="d-none d-sm-flex img-fluid" style="width: 50px;
+                                            height: 50px; border-radius: 25px">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="table-user-name">Meredith Grey</span>
+                                        <span class="table-user-title">HR</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end col-6">
+                                    <a href="#"><img src="/images/employer-dashboard/delete.svg" alt=""
+                                            class="mr-3"></a>
+                                    <button class="btn list-btn btn-primary btn-invite-sent">Pending</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row d-flex align-items-center">
+                                <div class="d-flex col-6">
+                                    <div class="d-flex flex-column justify-content-center mr-3">
+                                        <img src="/images/Tobi.jpg" alt="" class="d-none d-sm-flex img-fluid" style="width: 50px;
+                                            height: 50px; border-radius: 25px">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="table-user-name">Meredith Grey</span>
+                                        <span class="table-user-title">HR</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end col-6">
+                                    <a href="#"><img src="/images/employer-dashboard/delete.svg" alt=""
+                                            class="mr-3"></a>
+                                    <button class="btn list-btn btn-danger btn-rejected">Rejected</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row d-flex align-items-center">
+                                <div class="d-flex col-6">
+                                    <div class="d-flex flex-column justify-content-center mr-3">
+                                        <img src="/images/Tobi.jpg" alt="" class="d-none d-sm-flex img-fluid" style="width: 50px;
+                                            height: 50px; border-radius: 25px">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="table-user-name">Meredith Grey</span>
+                                        <span class="table-user-title">HR</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end col-6">
+                                    <a href="#"><img src="/images/employer-dashboard/delete.svg" alt=""
+                                            class="mr-3"></a>
+                                    <button class="btn list-btn btn-success btn-accepted">Accepted</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row d-flex align-items-center">
+                                <div class="d-flex col-6">
+                                    <div class="d-flex flex-column justify-content-center mr-3">
+                                        <img src="/images/Tobi.jpg" alt="" class="d-none d-sm-flex img-fluid" style="width: 50px;
+                                            height: 50px; border-radius: 25px">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="table-user-name">Meredith Grey</span>
+                                        <span class="table-user-title">HR</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end col-6">
+                                    <a href="#"><img src="/images/employer-dashboard/delete.svg" alt=""
+                                            class="mr-3"></a>
+                                    <button class="btn list-btn btn-primary btn-invite-sent">Pending</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row d-flex align-items-center">
+                                <div class="d-flex col-6">
+                                    <div class="d-flex flex-column justify-content-center mr-3">
+                                        <img src="/images/Tobi.jpg" alt="" class="d-none d-sm-flex img-fluid" style="width: 50px;
+                                            height: 50px; border-radius: 25px">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="table-user-name">Meredith Grey</span>
+                                        <span class="table-user-title">HR</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end col-6">
+                                    <a href="#"><img src="/images/employer-dashboard/delete.svg" alt=""
+                                            class="mr-3"></a>
+                                    <button class="btn list-btn btn-danger btn-rejected">Rejected</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row d-flex align-items-center">
+                                <div class="d-flex col-6">
+                                    <div class="d-flex flex-column justify-content-center mr-3">
+                                        <img src="/images/Tobi.jpg" alt="" class="d-none d-sm-flex img-fluid" style="width: 50px;
+                                            height: 50px; border-radius: 25px">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="table-user-name">Meredith Grey</span>
+                                        <span class="table-user-title">HR</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end col-6">
+                                    <a href="#"><img src="/images/employer-dashboard/delete.svg" alt=""
+                                            class="mr-3"></a>
+                                    <button class="btn list-btn btn-success btn-accepted">Accepted</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row d-flex align-items-center">
+                                <div class="d-flex col-6">
+                                    <div class="d-flex flex-column justify-content-center mr-3">
+                                        <img src="/images/Tobi.jpg" alt="" class="d-none d-sm-flex img-fluid" style="width: 50px;
+                                            height: 50px; border-radius: 25px">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="table-user-name">Meredith Grey</span>
+                                        <span class="table-user-title">HR</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end col-6">
+                                    <a href="#"><img src="/images/employer-dashboard/delete.svg" alt=""
+                                            class="mr-3"></a>
+                                    <button class="btn list-btn btn-primary btn-invite-sent">Pending</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-group-item">
+                            <div class="row d-flex align-items-center">
+                                <div class="d-flex col-6">
+                                    <div class="d-flex flex-column justify-content-center mr-3">
+                                        <img src="/images/Tobi.jpg" alt="" class="d-none d-sm-flex img-fluid" style="width: 50px;
+                                            height: 50px; border-radius: 25px">
+                                    </div>
+                                    <div class="d-flex flex-column justify-content-center">
+                                        <span class="table-user-name">Meredith Grey</span>
+                                        <span class="table-user-title">HR</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-end col-6">
+                                    <a href="#"><img src="/images/employer-dashboard/delete.svg" alt=""
+                                            class="mr-3"></a>
+                                    <button class="btn list-btn btn-danger btn-rejected">Rejected</button>
+                                </div>
+                            </div>
+                        </div>
+                    </ul>
+                    <!-- End of scenario 3 -->
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <!-- Bootstrap JS -->
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/bootstrap.min.js"></script>
+    <script src="/javascripts/popper.js"></script>
+</body>
+
+</html>
